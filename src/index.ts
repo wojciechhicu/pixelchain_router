@@ -11,9 +11,9 @@ app.use(helmet())
 app.use(Express.json())
 app.use("/", routes)
 app.get("/",(req, res)=>{
-        res.json('test')
+
 })
 
 app.listen(Server.Port, ()=>{
-        console.log(`Server created: http://localhost:${Server.Port}`)
+        console.log(`Server created: http://localhost:${Server.Port}`);
 })

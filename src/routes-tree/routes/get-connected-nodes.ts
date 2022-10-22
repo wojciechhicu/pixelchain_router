@@ -1,11 +1,11 @@
 import  Express  from "express";
-import { getConnectedPeers } from '../../_helpers/get-connected-peers'
+import { getConnectedPeers } from '../../_helpers/peers-functions'
 
 const peers = getConnectedPeers();
-const routerGetConnectedNodes = Express.Router();
+const routerConnectNode = Express.Router();
 
-routerGetConnectedNodes.get("/", (req, res)=>{
+routerConnectNode.get("/", (req, res)=>{
         res.json(peers);
 })
 
-export = routerGetConnectedNodes;
+export = routerConnectNode;
