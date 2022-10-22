@@ -7,7 +7,7 @@ export function getConnectedPeers(): cPeers[]{
         return parsedPeers
 }
 
-export function connectPeer(host: string, port: number): string {
+export function connectPeer(host: string, port: number, type: string): string {
         let connectedPeers: cPeers[] = getConnectedPeers();
         let checkNumber: number = 0;
         connectedPeers.forEach((val, ind)=>{
@@ -16,7 +16,7 @@ export function connectPeer(host: string, port: number): string {
                 }
         })
         if(checkNumber == 0){
-                connectedPeers.push({host: host, port: port});
+                connectedPeers.push({host: host, port: port, type: type});
                 try {
                         let file = fs.writeFileSync('./data/connected-peers.json', JSON.stringify(connectedPeers))
                 } catch (e) {

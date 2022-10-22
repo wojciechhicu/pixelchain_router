@@ -5,7 +5,7 @@ import { ConnectedPeers as cPeers } from "src/interfaces/connected-peers.interfa
 const routerGetConnectedNodes = Express.Router();
 
 routerGetConnectedNodes.get("/", (req, res)=>{
-        let peers: string = connectPeer('http://localhost:', 3005)
+        let peers: string = connectPeer('http://localhost:', 3005, 'validator')
         res.json(peers)
 })
 
