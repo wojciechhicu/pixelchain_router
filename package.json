@@ -1,0 +1,11 @@
+{
+  "name": "pixelchain-router",
+  "version": "0.0.1",
+  "description": "pixel chain route finder",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wojciech Marek",
+  "license": "ISC"
+}
