@@ -6,6 +6,7 @@
 		"checkJs": false,
 		"outDir": "dist",
 		"rootDir": ".",
+		"moduleResolution": "node",
 		"strict": false,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -33,6 +34,6 @@
 		"./src",
 		"./test",
 		"./*",
-		"./config"
+		"./config",
 	]
 }
