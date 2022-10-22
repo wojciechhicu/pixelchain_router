@@ -1,10 +1,11 @@
 import  Express  from "express";
+import { getConnectedPeers } from '../../_helpers/get-connected-peers'
+
+const peers = getConnectedPeers();
 const routerGetConnectedNodes = Express.Router();
-const peers = {
-        test: 123
-}
+
 routerGetConnectedNodes.get("/", (req, res)=>{
-        res.json(peers)
+        res.json(peers);
 })
 
 export = routerGetConnectedNodes;
