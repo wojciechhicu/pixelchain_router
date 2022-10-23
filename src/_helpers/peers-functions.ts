@@ -22,8 +22,8 @@ export function connectPeer(host: string, port: number, type: string): string {
                 } catch (e) {
                         return e
                 }
-                return 'yep'
+                return 'error'
         } else {
-                return 'nope'
+                return 'error'
         }
 }

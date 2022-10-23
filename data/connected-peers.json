@@ -1,14 +1,1 @@
-[
-        {
-                "host": "http://localhost:",
-                "port": 3000,
-                "type": "router"
-        },
-        {
-                "host": "http://localhost:",
-                "port": 12000,
-                "type": "validator",
-                "pixels": 32,
-                "wallet": "bc1q4czhgvmnm3damnvj69zsujxqut0th7cmynhktajxk2c8rrp4nd0qpl70up"
-        }
-]
+[{}]

@@ -1,12 +1,13 @@
 import  Express  from "express";
 import { connectPeer } from '../../_helpers/peers-functions'
-import { ConnectedPeers as cPeers } from "src/interfaces/connected-peers.interface";
+import { connectPeer as Peer} from "src/interfaces/connect-peer.interface";
 
-const routerGetConnectedNodes = Express.Router();
+const routeConnectNode = Express.Router();
 
-routerGetConnectedNodes.get("/", (req, res)=>{
-        let peers: string = connectPeer('http://localhost:', 3005, 'validator')
-        res.json(peers)
+routeConnectNode.post("/", (req, res)=>{
+        const peer = req.body;
+        //let peers: string = connectPeer(peer.host, peer.port, peer.type)
+        res.json(peer)
 })
 
-export = routerGetConnectedNodes;
+export = routeConnectNode;
