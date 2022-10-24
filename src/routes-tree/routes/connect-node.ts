@@ -6,8 +6,8 @@ const routeConnectNode = Express.Router();
 
 routeConnectNode.post("/", (req, res)=>{
         const peer = req.body;
-        //let peers: string = connectPeer(peer.host, peer.port, peer.type)
-        res.json(peer)
+        let peers: boolean = connectPeer(peer.host, peer.port, peer.type)
+        res.json(peers)
 })
 
 export = routeConnectNode;
