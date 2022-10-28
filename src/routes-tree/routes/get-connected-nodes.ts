@@ -1,11 +1,21 @@
 import  Express  from "express";
-import { getConnectedPeers } from '../../_helpers/peers-functions'
+import fs from 'fs';
+import { ConnectedPeers as cPeers} from '../../interfaces/connected-peers.interface'
 
-const peers = getConnectedPeers();
 const routerConnectNode = Express.Router();
 
 routerConnectNode.get("/", (req, res)=>{
-        res.json(peers);
+        try {
+                fs.readFile('data/connected-peers.json', 'utf8' ,(err, data)=>{
+                        if(err){
+                                res.send(err)
+                        } else {
+                                res.send(data)
+                        }
+                })
+        } catch( error){
+                res.send( error )
+        }
 })
 
 export = routerConnectNode;
