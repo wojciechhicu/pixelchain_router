@@ -18,4 +18,4 @@ app.get("/",(req, res)=>{
 
 app.listen(Server.Port, ()=>{
         console.log(`Server created: http://localhost:${Server.Port}`);
-})
+})//TODO dokumentacja kodu
