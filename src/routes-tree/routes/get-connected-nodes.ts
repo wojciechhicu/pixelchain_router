@@ -12,7 +12,7 @@ const routerConnectNode = Express.Router();
 routerConnectNode.get("/", (req, res)=>{
         try {
                 /** Read connected-peers.json file and send error or connected nodes  */
-                fs.readFile('data/connected-peers.json', 'utf8' ,(err, data)=>{
+                fs.readFile('src/data/connected-peers.json', 'utf8' ,(err, data)=>{
                         if(err){
                                 res.status(400).send({error: err})
                         } else {

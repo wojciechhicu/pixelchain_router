@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "fs";
 import { connectPeer as Peer} from "src/interfaces/connect-peer.interface";
+import { Request } from 'request';
 
 /**
  * Connect other node to the network
@@ -15,7 +16,7 @@ export function connect(peer: Peer): Promise<boolean>{
                 Number(peer.port);
 
                 //read file with nodes
-                readFile('data/connected-peers.json', 'utf8', (err: any, data: any)=>{
+                readFile('src/data/connected-peers.json', 'utf8', (err: any, data: any)=>{
 
                         //check for eny errors
                         if(err){
@@ -32,7 +33,7 @@ export function connect(peer: Peer): Promise<boolean>{
                                         rawData.push(peer)
 
                                         //write again file
-                                        writeFile('data/connected-peers.json', JSON.stringify(rawData, null, 2), 'utf8', (e)=>{
+                                        writeFile('src/data/connected-peers.json', JSON.stringify(rawData, null, 2), 'utf8', (e)=>{
 
                                                 //if there was an error while saving resolve false as cannot connect to the network
                                                 if(e){
@@ -49,4 +50,8 @@ export function connect(peer: Peer): Promise<boolean>{
                         }
                 })
         })
+}
+
+export function checkNodes(): void {
+
 }
